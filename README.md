@@ -47,3 +47,65 @@ This project demonstrates end-to-end statistical inference: from data cleaning a
 ---
 
 ## Project Structure
+nyc-crash-ford-fatality-analysis/
+├── ford_fatality_analysis.ipynb   # Full analysis notebook
+├── Ford_on_death_rate.py          # Analysis script
+├── README.md
+├── requirements.txt
+└── outputs/                       # Generated visualizations
+├── eda.png
+├── roc_curve.png
+├── feature_importance.png
+├── ford_coef_subsamples.png
+└── fatality_by_vehicle_type.png
+
+---
+
+## Notebook Structure
+
+| Section | Content |
+|---|---|
+| 1. Data Loading & Cleaning | Feature engineering, cleaning steps, variable definitions |
+| 2. Exploratory Analysis | Class distribution, Ford vs Non-Ford fatality rate by vehicle type |
+| 3. Main Model | Logistic regression with 15 controls, full output |
+| 4. Model Evaluation | ROC-AUC, ROC curve, optimal threshold, confusion matrix comparison |
+| 5. Feature Importance | Coefficient-based variable importance chart |
+| 6. Sub-Sample Analysis | 7 models by vehicle type, driver sex, vehicle age |
+| 7. Key Findings & Recommendations | Summary of 3 findings + 4 business recommendations |
+
+---
+
+## Data Source
+
+**NYC Open Data — Motor Vehicle Collisions (NYPD)**  
+https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95
+
+*Note: Raw data files are not included in this repository due to file size. Download directly from NYC Open Data.*
+
+---
+
+## Tools & Libraries
+
+```python
+pandas        # Data manipulation
+numpy         # Numerical computing
+statsmodels   # Logistic regression, statistical inference
+scikit-learn  # ROC-AUC, confusion matrix, model evaluation
+matplotlib    # Visualizations
+```
+
+---
+
+## Limitations
+
+1. **Severe class imbalance** — 37 fatal crashes limit statistical power
+2. **Observational data** — Results reflect association, not causation
+3. **NYC only** — Limited generalizability to other regions
+4. **Omitted variables** — Speed, weather, BAC, seatbelt use not available
+5. **Brand-level analysis** — Masks differences across Ford models (F-150, Mustang, etc.)
+
+---
+
+## Key Takeaway
+
+> Ford vehicles show a statistically significant positive association with fatal crash outcomes (β = 0.869, p = 0.046). The effect is unexpectedly concentrated among **female drivers** (β = 1.604, p = 0.044) — challenging the initial hypothesis that risk would be higher among male drivers given Ford's performance-oriented marketing strategy.
