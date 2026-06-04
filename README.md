@@ -47,19 +47,20 @@ This project demonstrates end-to-end statistical inference: from data cleaning a
 ---
 
 ## Project Structure
+
+```
 nyc-crash-ford-fatality-analysis/
 ├── ford_fatality_analysis.ipynb   # Full analysis notebook
 ├── Ford_on_death_rate.py          # Analysis script
 ├── README.md
 ├── requirements.txt
 └── outputs/                       # Generated visualizations
-├── eda.png
-├── roc_curve.png
-├── feature_importance.png
-├── ford_coef_subsamples.png
-└── fatality_by_vehicle_type.png
-
----
+    ├── eda.png
+    ├── roc_curve.png
+    ├── feature_importance.png
+    ├── ford_coef_subsamples.png
+    └── fatality_by_vehicle_type.png
+```
 
 ## Notebook Structure
 
